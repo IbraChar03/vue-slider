@@ -50,10 +50,12 @@ const {createApp} = Vue;
         },
         autoplay(){
             setInterval(function() {
+                 if(this.activeImage > this.slides.length - 1){
+                     this.activeImage = 0;
+                 }
+
             this.activeImage++;
-            if(this.activeImage > this.slides.length - 1){
-               this.activeImage = 0;
-            }
+         
             
             }, 2000);
                
