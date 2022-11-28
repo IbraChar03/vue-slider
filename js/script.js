@@ -1,8 +1,4 @@
-
 const {createApp} = Vue;
-let autoplayInterval;
-let playInterval;
-
 
  createApp({
 
@@ -10,6 +6,8 @@ let playInterval;
         return{
             
             activeImage : 0,
+            autoplayInterval : "",
+            playInterval : "",
             slides : [
                 {
                         image: 'img/01.webp',
