@@ -1,5 +1,8 @@
 
 const {createApp} = Vue;
+let autoplayInterval;
+let playInterval;
+
 
  createApp({
 
@@ -50,20 +53,27 @@ const {createApp} = Vue;
         },
         autoplay(){
             let self = this;
-            setInterval(function() {
-                self.activeImage++;
-                if(self.activeImage > self.slides.length - 1){
+            autoplayInterval =  setInterval(function() {
+                 self.activeImage++;
+                 if(self.activeImage > self.slides.length - 1){
                     self.activeImage = 0;
-                }
-
-        
-            }, 2000);
+                 }
+             }, 2000);
                
-        }
-        
+        },
+
+        stop(){
+            
+            clearInterval(autoplayInterval);
+           
+               
+        },
+         
    
    }
 
 }).mount("#app")
+
+
 
 
