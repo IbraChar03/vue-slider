@@ -63,9 +63,8 @@ let playInterval;
         },
 
         stop(){
-            
+                    
             clearInterval(autoplayInterval);
-           
                
         },
          
