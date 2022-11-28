@@ -5,6 +5,7 @@ const {createApp} = Vue;
 
     data(){
         return{
+            
             activeImage : 0,
             slides : [
                 {
@@ -35,26 +36,32 @@ const {createApp} = Vue;
     },
     methods:{
          next(){
-           this.activeImage++
+           this.activeImage++;
            if(this.activeImage > this.slides.length - 1){
             this.activeImage = 0;
            }
          
-        
-    
-     },
-     prev(){
-        this.activeImage--
+        },
+        prev(){
+        this.activeImage--;
         if(this.activeImage < 0){
          this.activeImage = this.slides.length - 1;
         }
-      
-     
- 
-  }
-
-
- 
+        },
+        autoplay(){
+            setInterval(function() {
+            this.activeImage++;
+            if(this.activeImage > this.slides.length - 1){
+               this.activeImage = 0;
+            }
+            
+            }, 2000);
+               
+        }
+        
    
    }
+
 }).mount("#app")
+
+

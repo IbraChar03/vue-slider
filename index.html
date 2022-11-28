@@ -28,14 +28,15 @@
                     <div class = "prev" @click="prev"></div>
                     <div class = "next" @click="next"></div>
                    <div class = "thumb"> 
-                        <img v-for = "(element,index) in slides" :src = "element.image"  :class = "(activeImage === index) ? `active` : ``"/>
+                        <img v-for = "(element,i) in slides" :src = "element.image" id="img1"  :class = "(activeImage === i) ? `active` : ``"  class="imgblock" />
                      </div> 
                     
                 </div>
 
             </div>
+            <button id="btn" @click="autoplay"><strong>INIZIA</strong></button>
         </div>
-
+        
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
