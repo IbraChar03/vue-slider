@@ -35,28 +35,28 @@ const {createApp} = Vue;
     
     },
     methods:{
-         next(){
-           this.activeImage++;
-           if(this.activeImage > this.slides.length - 1){
-            this.activeImage = 0;
-           }
+        next(){
+            this.activeImage++;
+            if(this.activeImage > this.slides.length - 1){
+                this.activeImage = 0;
+            }
          
         },
         prev(){
-        this.activeImage--;
-        if(this.activeImage < 0){
-         this.activeImage = this.slides.length - 1;
-        }
+            this.activeImage--;
+            if(this.activeImage < 0){
+                this.activeImage = this.slides.length - 1;
+            }
         },
         autoplay(){
+            let self = this;
             setInterval(function() {
-                 if(this.activeImage > this.slides.length - 1){
-                     this.activeImage = 0;
-                 }
+                self.activeImage++;
+                if(self.activeImage > self.slides.length - 1){
+                    self.activeImage = 0;
+                }
 
-            this.activeImage++;
-         
-            
+        
             }, 2000);
                
         }
